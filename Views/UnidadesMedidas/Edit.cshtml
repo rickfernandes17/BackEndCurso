@@ -1,0 +1,64 @@
+﻿@model BackEndCurso.Models.UnidadesMedida
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>UnidadesMedida</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Sigla" />
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CasasDecimais" class="control-label"></label>
+                <input asp-for="CasasDecimais" class="form-control" />
+                <span asp-validation-for="CasasDecimais" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ativa" class="control-label"></label>
+                <input asp-for="Ativa" class="form-control" />
+                <span asp-validation-for="Ativa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CadastradoUsuario" class="control-label"></label>
+                <input asp-for="CadastradoUsuario" class="form-control" />
+                <span asp-validation-for="CadastradoUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CadastradoData" class="control-label"></label>
+                <input asp-for="CadastradoData" class="form-control" />
+                <span asp-validation-for="CadastradoData" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlteradoUsuario" class="control-label"></label>
+                <input asp-for="AlteradoUsuario" class="form-control" />
+                <span asp-validation-for="AlteradoUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlteradoData" class="control-label"></label>
+                <input asp-for="AlteradoData" class="form-control" />
+                <span asp-validation-for="AlteradoData" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
